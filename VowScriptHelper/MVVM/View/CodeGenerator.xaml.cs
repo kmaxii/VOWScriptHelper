@@ -27,7 +27,7 @@ namespace VowScriptHelper.MVVM.View
             if (!e.Data.GetDataPresent(DataFormats.FileDrop))
                 return;
 
-            FillBoxes((string[])e.Data.GetData(DataFormats.FileDrop);
+            FillBoxes((string[])e.Data.GetData(DataFormats.FileDrop));
         }
 
 
@@ -60,6 +60,7 @@ namespace VowScriptHelper.MVVM.View
         private void FillCodeBox(List<string> lines, List<string> fileNames)
         {
             StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine("//" + QuestNameInPutBox.Text);
             for(int i = 0; i < lines.Count; i++)
             {
                 stringBuilder.AppendLine(GetCodeLine(lines[i], fileNames[i]));

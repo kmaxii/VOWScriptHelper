@@ -121,7 +121,7 @@ namespace VowScriptHelper.MVVM.View
                 int dialogueNumber = 1;
                 foreach(string fileName in fileNames)
                 {
-                    if (fileName.Contains(name))
+                    if (fileName.Contains(name + "-"))
                         dialogueNumber++;
                 }
 

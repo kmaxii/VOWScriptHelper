@@ -59,7 +59,8 @@ namespace VowScriptHelper.MVVM.View
 
         private void FillCodeBox(List<string> lines, List<string> fileNames)
         {
-            StringBuilder stringBuilder = new StringBuilder();
+            CodeOutputBox.Clear();
+           StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine("//" + QuestNameInPutBox.Text);
             for(int i = 0; i < lines.Count; i++)
             {
@@ -70,7 +71,7 @@ namespace VowScriptHelper.MVVM.View
 
         private void FillJSONBox(List<string> fileNames)
         {
-
+            JsonOutputBox.Clear();
             StringBuilder stringBuilder = new StringBuilder();
             for (int i = 0; i < fileNames.Count; i++)
             {
@@ -82,9 +83,9 @@ namespace VowScriptHelper.MVVM.View
                     "    \"sounds\": [{ \"name\": \"wynnvp:" + str + "\", \"stream\": true}]\n" +
                     "  },\n";
 
-                //stringBuilder.AppendLine(GetCodeLine(lines[i], fileNames[i]));
+             
             }
-        //    JsonOutputBox.Text = stringBuilder.ToString();
+      
 
            
         }

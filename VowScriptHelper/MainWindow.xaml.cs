@@ -29,5 +29,17 @@ namespace VowScriptHelper
         {
 
         }
+
+        private void DragWindow(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
+
+        private void CloseProgram(object sender, MouseButtonEventArgs e)
+        {
+           System.Windows.Application.Current.Shutdown();
+            Console.WriteLine("Hi");
+        }
     }
 }

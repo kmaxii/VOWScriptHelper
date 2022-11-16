@@ -52,5 +52,7 @@ namespace VowScriptHelper.MVVM.ViewModel
 			});
 		}
 
-	}
+
+
+    }
 }

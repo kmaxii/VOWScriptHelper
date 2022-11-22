@@ -6,22 +6,21 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Shapes;
-using static System.Net.WebRequestMethods;
 using File = System.IO.File;
 using Path = System.IO.Path;
 
 namespace VowScriptHelper.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for CodeGenerator.xaml
+    /// Interaction logic for FileNameGeneratorView.xaml
     /// </summary>
-    public partial class CodeGenerator : UserControl
+    public partial class FileNameGeneratorView : UserControl
     {
-        public CodeGenerator()
+        public FileNameGeneratorView()
         {
             InitializeComponent();
         }
+
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
@@ -58,8 +57,6 @@ namespace VowScriptHelper.MVVM.View
             FormatLines(ref lines);
             FillInputBox(lines);
 
-
-
         }
 
 
@@ -87,33 +84,14 @@ namespace VowScriptHelper.MVVM.View
             CodeOutputBox.Text = stringBuilder.ToString();
         }
 
-        private void FillJSONBox(List<string> fileNames)
-        {
-            JsonOutputBox.Clear();
-            for (int i = 0; i < fileNames.Count; i++)
-            {
-
-                string str = fileNames[i];
-                JsonOutputBox.Text +=
-                    "  \"" + str + "\": {\n" +
-                    "    \"category\": \"voice\",\n" +
-                    "    \"sounds\": [{ \"name\": \"wynnvp:" + str + "\", \"stream\": true}]\n" +
-                    "  },\n";
-
-
-            }
-
-
-
-        }
+   
 
         private static string GetCodeLine(string line, string fileName)
         {
-            string outPut = "s.addSound(\"";
-            outPut += RemoveCharacterChangeNote(line).Trim();
-            outPut += "\", \"";
+          
+            string outPut = RemoveCharacterChangeNote(line).Trim();
+            outPut += " | ";
             outPut += fileName;
-            outPut += "\", false);";
             return outPut;
         }
 
@@ -259,7 +237,6 @@ namespace VowScriptHelper.MVVM.View
             List<string> fileNames = GenerateFileNames(lines);
 
             FillCodeBox(lines, fileNames);
-            FillJSONBox(fileNames);
         }
 
 
@@ -276,3 +253,4 @@ namespace VowScriptHelper.MVVM.View
         }
     }
 }
+

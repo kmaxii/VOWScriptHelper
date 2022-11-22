@@ -13,10 +13,12 @@ namespace VowScriptHelper.MVVM.ViewModel
 		public RelayCommand HomeViewCommand { get; set; }
 		public RelayCommand ScriptCleanerViewCommand { get; set; }
 		public RelayCommand CodeGeneratorViewCommand { get; set; }
+		public RelayCommand FileNameGeneratorViewCommand { get; set; }
 
 		public HomeViewModel HomeVM { get; set; }
 		public ScriptCleanerViewModel ScriptCleanerVM { get; set; }
 		public CodeGeneratorViewModel CodeGeneratorVM { get; set; }
+		public FileNameGeneratorViewModel FileNameGeneratorVM { get; set; }
 
 		private object _currentView;
 
@@ -34,6 +36,7 @@ namespace VowScriptHelper.MVVM.ViewModel
 			HomeVM = new HomeViewModel();
 			ScriptCleanerVM = new ScriptCleanerViewModel(); 
 			CodeGeneratorVM = new CodeGeneratorViewModel();
+            FileNameGeneratorVM = new FileNameGeneratorViewModel();
 			CurrentView = HomeVM;
 
 			HomeViewCommand = new RelayCommand(o =>
@@ -50,7 +53,15 @@ namespace VowScriptHelper.MVVM.ViewModel
 			{
 				CurrentView = CodeGeneratorVM;
 			});
-		}
+
+            FileNameGeneratorViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = FileNameGeneratorVM;
+            });
+
+
+
+        }
 
 
 

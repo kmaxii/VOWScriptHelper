@@ -57,11 +57,12 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}" Checked="RadioButton_Checked"
                              Command="{Binding ScriptCleanerViewCommand}"/>
-                <RadioButton Content="Note Remover"
+                <RadioButton Content="File Name Generator"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding FileNameGeneratorViewCommand}"/>
                 <RadioButton Content="Code Generator"
                              Height="50"
                              Foreground="White"
@@ -96,26 +97,7 @@
 
 
 
-            <Border Width="500"
-                    Height="20"
-                    CornerRadius="10"
-                    Margin="44,18,176,37"
-                    Grid.Column="1">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#FF1E1B33" Offset="0.0"/>
-                        <GradientStop Color="#FF1E1B33" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-
-                <Border.Clip>
-                    <RectangleGeometry RadiusX="10"
-                                       RadiusY="10"
-                                       Rect="0,0,500,200"/>
-                </Border.Clip>
-
-
-            </Border>
+            
 
         </Grid>
        

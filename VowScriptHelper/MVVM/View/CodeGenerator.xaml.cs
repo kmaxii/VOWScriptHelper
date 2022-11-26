@@ -110,8 +110,12 @@ namespace VowScriptHelper.MVVM.View
         private static string GetCodeLine(string line, string fileName)
         {
             string outPut = "s.addSound(\"";
+            line = line.Replace("\"", "\\\"");
+
             outPut += RemoveCharacterChangeNote(line).Trim();
-            outPut += "\", \"";
+
+
+
             outPut += fileName;
             outPut += "\", false);";
             return outPut;

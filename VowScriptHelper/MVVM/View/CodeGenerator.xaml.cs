@@ -113,7 +113,7 @@ namespace VowScriptHelper.MVVM.View
             line = line.Replace("\"", "\\\"");
 
             outPut += RemoveCharacterChangeNote(line).Trim();
-
+            outPut += "\", \"";
 
 
             outPut += fileName;
@@ -137,6 +137,7 @@ namespace VowScriptHelper.MVVM.View
                 string name = GetName(line).ToLower();
                 //Remove empty chars
                 name = name.Replace(" ", "");
+                name = Regex.Replace(name, @"[^a-zA-Z0-9]", "");
 
                 name = questName + "-" + name;
 

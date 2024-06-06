@@ -1,19 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Path = System.IO.Path;
 
 namespace VowScriptHelper.MVVM.View
@@ -45,12 +36,12 @@ namespace VowScriptHelper.MVVM.View
 
                 string path = Path.Combine(Path.GetDirectoryName(file), file);
 
-                List<string> lines = new List<string>(System.IO.File.ReadAllLines(path));
+                List<string> lines = new List<string>(File.ReadAllLines(path));
 
                 FormatLines(ref lines);
 
 
-                var outPut = new System.Text.StringBuilder();
+                var outPut = new StringBuilder();
 
                 for (int i= 0; i < lines.Count; i++)
                 {

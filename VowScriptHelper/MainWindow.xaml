@@ -69,6 +69,12 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding CodeGeneratorViewCommand}"/>
+                <RadioButton Content="File Checker"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding FileCheckerViewCommand}"/>
             </StackPanel>
 
             <ContentControl Grid.Row="1"

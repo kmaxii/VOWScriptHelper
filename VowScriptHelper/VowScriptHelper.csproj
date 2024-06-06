@@ -103,6 +103,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\FileChecker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\FileNameGeneratorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -121,6 +125,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\ViewModel\FileCheckerViewModel.cs" />
     <Compile Include="MVVM\ViewModel\CodeGeneratorViewModel.cs" />
     <Compile Include="MVVM\ViewModel\FileNameGeneratorViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
@@ -128,6 +133,9 @@
     <Compile Include="MVVM\ViewModel\ScriptCleanerViewModel.cs" />
     <Compile Include="MVVM\View\CodeGenerator.xaml.cs">
       <DependentUpon>CodeGenerator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\FileChecker.xaml.cs">
+      <DependentUpon>FileChecker.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\FileNameGeneratorView.xaml.cs">
       <DependentUpon>FileNameGeneratorView.xaml</DependentUpon>

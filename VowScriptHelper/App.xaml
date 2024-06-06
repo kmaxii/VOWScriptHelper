@@ -26,6 +26,10 @@
             <DataTemplate DataType="{x:Type viewModel:FileNameGeneratorViewModel}">
                 <view:FileNameGeneratorView/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:FileCheckerViewModel}">
+                <view:FileChecker/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

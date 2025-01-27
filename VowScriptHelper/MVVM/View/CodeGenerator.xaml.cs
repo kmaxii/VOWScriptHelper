@@ -82,7 +82,9 @@ namespace VowScriptHelper.MVVM.View
             stringBuilder.AppendLine("//" + QuestNameInPutBox.Text);
             for (int i = 0; i < lines.Count; i++)
             {
+                //stringBuilder.AppendLine("{");
                 stringBuilder.AppendLine(GetCodeLine(lines[i], fileNames[i]));
+               // stringBuilder.AppendLine("},");
             }
             CodeOutputBox.Text = stringBuilder.ToString();
         }
@@ -109,15 +111,21 @@ namespace VowScriptHelper.MVVM.View
 
         private static string GetCodeLine(string line, string fileName)
         {
-            string outPut = "s.addSound(\"";
+            //Replace all " chars in the line with \"
             line = line.Replace("\"", "\\\"");
-
+            string outPut = "  {\n";
+            outPut += "    \"line\": \"";
             outPut += RemoveCharacterChangeNote(line).Trim();
-            outPut += "\", \"";
+            outPut += "\",\n";
 
+            outPut += "    \"file\": \"";
 
+            fileName = fileName.Replace("[PLAYED]", "");
+            fileName = fileName.Trim();
             outPut += fileName;
-            outPut += "\", false);";
+            outPut += "\"\n";
+
+            outPut += "  },";
             return outPut;
         }
 

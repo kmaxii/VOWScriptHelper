@@ -89,25 +89,7 @@ namespace VowScriptHelper.MVVM.View
             CodeOutputBox.Text = stringBuilder.ToString();
         }
 
-        private void FillJSONBox(List<string> fileNames)
-        {
-            JsonOutputBox.Clear();
-            for (int i = 0; i < fileNames.Count; i++)
-            {
-
-                string str = fileNames[i];
-                JsonOutputBox.Text +=
-                    "  \"" + str + "\": {\n" +
-                    "    \"category\": \"voice\",\n" +
-                    "    \"sounds\": [{ \"name\": \"wynnvp:" + str + "\", \"stream\": true}]\n" +
-                    "  },\n";
-
-
-            }
-
-
-
-        }
+ 
 
         private static string GetCodeLine(string line, string fileName)
         {
@@ -272,7 +254,6 @@ namespace VowScriptHelper.MVVM.View
             List<string> fileNames = GenerateFileNames(lines);
 
             FillCodeBox(lines, fileNames);
-            FillJSONBox(fileNames);
         }
 
 

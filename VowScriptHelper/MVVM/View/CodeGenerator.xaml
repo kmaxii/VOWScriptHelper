@@ -175,7 +175,7 @@
 
             <StackPanel Orientation="Vertical">
             <Border Width="400"
-                    Height="150"
+                    Height="310"
                     CornerRadius="10"
                     Margin="10,0,0,0">
                 <Border.Background>
@@ -214,75 +214,12 @@
                                 AcceptsReturn="True"
                                 VerticalScrollBarVisibility="Visible"
                                 IsReadOnly="True"
-                                Text=""
+                                Text="" Margin="0,0,0,-147"
                                 >
                                 <TextBox.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                                         <GradientStop Color="#FFB58F43" Offset="0.0"/>
                                         <GradientStop Color="#FFAF7F20" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </TextBox.Background>
-                            </TextBox>
-
-
-
-
-                        </Border>
-                    </StackPanel>
-
-
-
-
-                </Grid>
-
-            </Border>
-
-            <Border Width="400"
-                    Height="150"
-                    CornerRadius="10"
-                    Margin="10,10,0,0">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#FF46F789" Offset="0.0"/>
-                        <GradientStop Color="#FF1ACC5D" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-
-                <Border.Clip>
-                    <RectangleGeometry RadiusX="10"
-                                       RadiusY="10"
-                                       Rect="0,0,450,300"/>
-                </Border.Clip>
-
-                <Grid>
-                    <StackPanel>
-                        <TextBlock Text="JSON:"
-                                   Foreground="White"
-                                   FontSize="25"
-                                   Margin="20,2,10,0"
-                                   HorizontalAlignment="Center"
-                                   FontFamily="/Fonts/#Poppins"/>
-
-                        <Border Width="390"
-                            Height="100"
-                            CornerRadius="10"
-                            Margin="0,3,0,0">
-
-
-
-
-                            <TextBox
-                                x:Name="JsonOutputBox"
-                                TextWrapping="Wrap"
-                                AcceptsReturn="True"
-                                VerticalScrollBarVisibility="Visible"
-                                IsReadOnly="True"
-                                Text=""
-                                >
-                                <TextBox.Background>
-                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                                        <GradientStop Color="#FF3BD074" Offset="0.0"/>
-                                        <GradientStop Color="#FF19AB50" Offset="1"/>
                                     </LinearGradientBrush>
                                 </TextBox.Background>
                             </TextBox>

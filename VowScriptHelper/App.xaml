@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:VowScriptHelper"
              xmlns:viewModel="clr-namespace:VowScriptHelper.MVVM.ViewModel" 
              xmlns:view="clr-namespace:VowScriptHelper.MVVM.View" 
-             StartupUri="MainWindow.xaml">
+             >
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

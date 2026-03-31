@@ -8,6 +8,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using Microsoft.Extensions.DependencyInjection;
+using VowScriptHelper.Interfaces;
 using File = System.IO.File;
 using Path = System.IO.Path;
 
@@ -18,8 +20,15 @@ namespace VowScriptHelper.MVVM.View
     /// </summary>
     public partial class FileChecker : UserControl
     {
-        public FileChecker()
+        private IDialogueHandler dialogueService;
+
+        public FileChecker() : this(App.ServiceProvider.GetRequiredService<IDialogueHandler>())
         {
+        }
+
+        public FileChecker(IDialogueHandler dialogueHandler)
+        {
+            this.dialogueService = dialogueHandler;
             InitializeComponent();
         }
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
@@ -170,7 +179,7 @@ namespace VowScriptHelper.MVVM.View
             for (int i = 0; i < lines.Count; i++)
             {
                 string line = lines[i];
-                string name = GetName(line).ToLower();
+                string name = dialogueService.GetName(line).ToLower();
                 //Remove empty chars
                 name = name.Replace(" ", "");
                 name = Regex.Replace(name, @"[^a-zA-Z0-9]", "");
@@ -201,32 +210,6 @@ namespace VowScriptHelper.MVVM.View
             return line;
 
         }
-
-        private static string GetName(string line)
-        {
-            int dollarSlashIndex = line.IndexOf("/$");
-            if (dollarSlashIndex != -1)
-            {
-                return line.Substring(dollarSlashIndex + 2).Trim();
-            }
-
-
-            if (!line.StartsWith("["))
-            {
-                return "unknown";
-            }
-
-            int index = line.IndexOf("] ");
-            if (index == -1)
-            {
-                return "unknown";
-            }
-
-            string name = line.Substring(index + 2);
-            name = GetStringBefore(name, ":");
-            return name.Trim();
-        }
-
 
         private static string GetStringBefore(string text, string stopAt = "-")
         {

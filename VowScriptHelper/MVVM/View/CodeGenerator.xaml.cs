@@ -107,6 +107,8 @@ namespace VowScriptHelper.MVVM.View
         {
             //Replace all " chars in the line with \"
             line = line.Replace("\"", "\\\"");
+            line = line.Replace("<name>", "soldier");
+            line = Regex.Replace(line, @"<[^>]*>", "");
             string outPut = "  {\n";
             outPut += "    \"line\": \"";
             outPut += RemoveCharacterChangeNote(line).Trim();
